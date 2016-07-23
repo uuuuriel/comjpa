@@ -9,17 +9,16 @@ public class RunnerJPA {
 	
 	public static void main(String[] args){
 		Estado sc = new Estado();
-		sc.setId(3);
 		sc.setNome("Santa Catarina");
 		sc.setUf("SC");
 		
 		Cidade joi = new Cidade();
-		joi.setId(3);
+
 		joi.setEstado(sc);
 		joi.setNome("Joinville");
 		
 		Cliente eu = new Cliente();
-		eu.setId(3);
+
 		eu.setCidade(joi);
 		eu.setNome("Thiago");
 		

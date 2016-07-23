@@ -22,15 +22,15 @@ public class JPAConnection{
 		//EntityManager em = conexao.createEntityManager();
 	}
 	
-	public EntityManager getEntityManager(){
+	protected EntityManager getEntityManager(){
 		return conectar().createEntityManager();
 	}
 	
-	public Query getQuery(String jpql){
+	protected Query getQuery(String jpql){
 		return this.getEntityManager().createQuery(jpql);
 	}
 	
-	public void incluir(Object o){
+	protected void incluir(Object o){
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
 		em.persist(o);
