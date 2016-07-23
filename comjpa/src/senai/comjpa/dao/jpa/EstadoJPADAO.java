@@ -9,11 +9,6 @@ import senai.comjpa.pojo.Estado;
 
 public class EstadoJPADAO extends JPAConnection implements EstadoDAO {
 
-	@Override
-	public int incluir(Estado estado){
-		super.incluir(estado);
-		return estado.getId();
-	}
 	
 	@Override
 	public Estado buscarPorId(int id){

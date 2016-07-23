@@ -29,12 +29,4 @@ public class JPAConnection{
 	protected Query getQuery(String jpql){
 		return this.getEntityManager().createQuery(jpql);
 	}
-	
-	protected void incluir(Object o){
-		EntityManager em = getEntityManager();
-		em.getTransaction().begin();
-		em.persist(o);
-		em.getTransaction().commit();
-		em.close();
-	}
 }

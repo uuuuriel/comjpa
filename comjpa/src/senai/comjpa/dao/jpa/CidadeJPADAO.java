@@ -8,12 +8,6 @@ import senai.comjpa.daoe.CidadeDAO;
 import senai.comjpa.pojo.Cidade;
 
 public class CidadeJPADAO extends JPAConnection implements CidadeDAO {
-
-	@Override
-	public int incluir(Cidade cidade){
-		super.incluir(cidade);
-		return cidade.getId();
-	}
 	
 	@Override
 	public Cidade buscarPorId(int id){
