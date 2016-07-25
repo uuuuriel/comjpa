@@ -1,27 +1,11 @@
 package senai.comjpa.dao.jpa;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
-import senai.comjpa.pojo.Cliente;
+public abstract class JPAAbstract<Object> extends JPAConnection {
 
-public abstract class JPAAbstract<? extends JPAConnection> {
-
-    private AbstractItem item;
-
-    public void setItem(AbstractItem item) {
-    	this.item = item;
-    }
-
-    public AbstractItem getItem() {
-    	return this.item;
-    }
 	public abstract String getEntityName();
 
-	
-	
 	protected void incluir(Object o){
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
@@ -29,5 +13,15 @@ public abstract class JPAAbstract<? extends JPAConnection> {
 		em.getTransaction().commit();
 		em.close();
 	}
+
+//	public Object buscarPorId(int id){
+//		String jpql = " select c from"+getEntityName()+" c where id "+ id;
+//		Query query = super.getQuery(jpql);
+//		List list = query.getResultList();
+//		for(Object object : list){
+//			return ((Object) object);
+//		}
+//		return null;
+//	}
 
 }

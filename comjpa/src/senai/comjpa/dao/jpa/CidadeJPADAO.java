@@ -1,9 +1,5 @@
 package senai.comjpa.dao.jpa;
 
-import java.util.List;
-
-import javax.persistence.Query;
-
 import senai.comjpa.daoe.CidadeDAO;
 import senai.comjpa.pojo.Cidade;
 
