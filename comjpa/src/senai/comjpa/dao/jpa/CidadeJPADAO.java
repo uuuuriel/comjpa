@@ -10,18 +10,8 @@ public class CidadeJPADAO extends JPAAbstract<Cidade> implements CidadeDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-/*	
-	@Override
-	public Cidade buscarPorId(int id){
-		String jpql = " select c from Cliente c where id "+ id;
-		Query query = super.getQuery(jpql);
-		List list = query.getResultList();
-		for(Object object : list){
-			return ((Cidade) object);
-		}
-		
-		return null;
-	}*/
+
+
 	
 	
 	

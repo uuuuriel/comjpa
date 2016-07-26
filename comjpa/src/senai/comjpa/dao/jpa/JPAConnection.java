@@ -18,8 +18,8 @@ public class JPAConnection{
 		}
 		
 		conexao = Persistence.createEntityManagerFactory("SENAI");
+		EntityManager em = conexao.createEntityManager();
 		return conexao;
-		//EntityManager em = conexao.createEntityManager();
 	}
 	
 	protected EntityManager getEntityManager(){
@@ -29,4 +29,6 @@ public class JPAConnection{
 	protected Query getQuery(String jpql){
 		return this.getEntityManager().createQuery(jpql);
 	}
+	
+	public abstract String getEntityName();
 }
