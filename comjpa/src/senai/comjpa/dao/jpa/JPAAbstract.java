@@ -12,7 +12,7 @@ import senai.comjpa.pojo.Estado;
 public abstract class JPAAbstract<E> extends JPAConnection{
 
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("unchecked")
 	public String getEntityName(){
 			Class<? extends JPAAbstract> realClass = getClass();
 			ParameterizedType superclass = (ParameterizedType)realClass.getGenericSuperclass();
@@ -33,15 +33,15 @@ public abstract class JPAAbstract<E> extends JPAConnection{
 		em.close();
 	}
 
-//	protected buscarPorId(int id){
-//		String jpql = " select c from "+getEntityName()+" c where id "+ id;
-//		Query query = super.getQuery(jpql);
-//		List list = query.getResultList();
-//		for(Object object : list){
-//			return ((Estado) object);
-//		}
-//		
-//		return null;
-//	}
+	protected E buscarPorId(int id){
+		String jpql = " select c from "+getEntityName()+" c where id "+ id;
+		Query query = (Query) super.getQuery(jpql);
+		java.util.List list = ((javax.persistence.Query) query).getResultList();
+		for(Object object : list){
+			return ((E) object);
+		}
+	
+		return null;
+	}
 
 }

@@ -21,8 +21,9 @@ public class RunnerJPA {
 		eu.setCidade(joi);
 		eu.setNome("Thiago");
 	
-		JPAAbstract<Cliente> jpa =  (JPAAbstract<Cliente>) new JPAConnection();
-		jpa.incluir(eu);
+		JPAAbstract jpa =  new JPAAbstract() {};
+		//jpa.incluir(eu);
+		System.out.println(jpa.buscarPorId(1).toString());
 		
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}
