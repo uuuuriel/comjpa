@@ -22,8 +22,8 @@ public class RunnerJPA {
 		eu.setNome("Thiago");
 	
 		JPAAbstract jpa =  new JPAAbstract() {};
-		//jpa.incluir(eu);
-		System.out.println(jpa.buscarPorId(1).toString());
+		jpa.cadastrar(eu);
+		//jpa.editar(eu);
 		
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}
