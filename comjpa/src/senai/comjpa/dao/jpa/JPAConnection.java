@@ -29,6 +29,4 @@ public class JPAConnection{
 	protected Query getQuery(String jpql){
 		return this.getEntityManager().createQuery(jpql);
 	}
-	
-	public abstract String getEntityName();
 }
