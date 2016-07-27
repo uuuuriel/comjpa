@@ -8,22 +8,22 @@ public class RunnerJPA {
 	
 	public static void main(String[] args){
 		Estado sc = new Estado();
-		sc.setNome("Santa Catarina");
+		sc.setNome("Santa ae");
 		sc.setUf("SC");
 		
 		Cidade joi = new Cidade();
 
 		joi.setEstado(sc);
-		joi.setNome("Joinville");
+		joi.setNome("ae");
 		
 		Cliente eu = new Cliente();
 
 		eu.setCidade(joi);
-		eu.setNome("Thiago");
+		eu.setNome("ae");
 	
-		JPAAbstract jpa =  new JPAAbstract() {};
-		jpa.cadastrar(eu);
-		//jpa.editar(eu);
+		JPAAbstract<Object, Object> jpa =  new JPAAbstract<Object, Object>() {};
+		//jpa.cadastrar(eu);
+		jpa.remover(4);
 		
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}

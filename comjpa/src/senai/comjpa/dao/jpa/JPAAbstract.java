@@ -103,7 +103,7 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		String jpql = "SELECT E FROM "+ this.getEntityName() +" E";		
 		if(where != null && !where.isEmpty()){
 			jpql += " WHERE "+ where;
-		}		
+		}
 		EntityManager em = getEntityManager();		
 		TypedQuery<E> sql = em.createQuery(jpql,this.entidade);		
 		List listaEntidade = (List) sql.getResultList();	
