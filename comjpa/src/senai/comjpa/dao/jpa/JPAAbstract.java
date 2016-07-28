@@ -43,8 +43,9 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 	
 	private Class<E> entidade;
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings("unchecked")
 	public JPAAbstract(){
+		@SuppressWarnings("rawtypes")
 		Class<? extends JPAAbstract> realClass = getClass();
 		ParameterizedType superclass = (ParameterizedType) realClass.getGenericSuperclass();
 		this.entidade = (Class<E>) superclass.getActualTypeArguments()[0];
@@ -61,7 +62,7 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 	}
 	
 	public E getObjeto(ID id){	
-		EntityManager em = getEntityManager();	
+		EntityManager em = getEntityManager();
 		E e = em.find(this.entidade, id);
 		return e;
 	}
@@ -87,7 +88,7 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		E e = this.getObjeto(id);		
 		EntityManager em = getEntityManager();		
 		em.getTransaction().begin();		
-		e = em.merge(e);		
+		e = em.merge(e);
 		em.remove(e);		
 		em.getTransaction().commit();		
 		em.close();
