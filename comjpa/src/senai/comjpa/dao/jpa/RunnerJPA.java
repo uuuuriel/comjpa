@@ -21,7 +21,7 @@ public class RunnerJPA {
 		eu.setCidade(joi);
 		eu.setNome("ae");
 	
-		JPAAbstract<Object, Object> jpa =  new JPAAbstract<Object, Object>() {};
+		JPAAbstract jpa =  new JPAAbstract() {};
 		//jpa.cadastrar(eu);
 		jpa.remover(4);
 		

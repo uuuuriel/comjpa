@@ -1,6 +1,5 @@
 package senai.comjpa.dao.jpa;
 
-import java.awt.List;
 import java.lang.reflect.ParameterizedType;
 
 import javax.persistence.Entity;
@@ -44,9 +43,8 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 	
 	private Class<E> entidade;
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public JPAAbstract(){
-		@SuppressWarnings("rawtypes")
 		Class<? extends JPAAbstract> realClass = getClass();
 		ParameterizedType superclass = (ParameterizedType) realClass.getGenericSuperclass();
 		this.entidade = (Class<E>) superclass.getActualTypeArguments()[0];
@@ -95,18 +93,18 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		em.close();
 	}
 	
-	public List listar(){
+	public java.util.List<E> listar(){
 		return this.listar();
 	}
 	
-	public List listar(String where){		
+	public java.util.List<E> listar(String where){		
 		String jpql = "SELECT E FROM "+ this.getEntityName() +" E";		
 		if(where != null && !where.isEmpty()){
 			jpql += " WHERE "+ where;
 		}
 		EntityManager em = getEntityManager();		
 		TypedQuery<E> sql = em.createQuery(jpql,this.entidade);		
-		List listaEntidade = (List) sql.getResultList();	
+		java.util.List<E> listaEntidade = sql.getResultList();	
 		return listaEntidade;
 	}
 
