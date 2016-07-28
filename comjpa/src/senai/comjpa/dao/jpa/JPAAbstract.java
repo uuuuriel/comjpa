@@ -1,6 +1,7 @@
 package senai.comjpa.dao.jpa;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
@@ -60,7 +61,7 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		em.close();
 	}
 	
-	public java.util.List<E> listar(){
+	public List<E> listar(){
 		return this.listar();
 	}
 	

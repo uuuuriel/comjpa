@@ -27,8 +27,8 @@ public class RunnerJPA {
 		JPAAbstract<Cliente, Integer> jpa = new JPAAbstract<Cliente, Integer>(){};
 		//jpa.cadastrar(eu);
 		//jpa.remover(2);
-		//List<Cliente> ae = jpa.listar();
-		jpa.editar(eu);
+		List<Cliente> ae = jpa.listar();
+		//jpa.editar(eu);
 		//System.out.println(ae);
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}
