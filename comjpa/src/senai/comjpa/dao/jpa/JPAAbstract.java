@@ -61,8 +61,8 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		em.close();
 	}
 	
-	public List<E> listar(){
-		return this.listar();
+	public java.util.List<E> listar(){
+		return this.listar("");
 	}
 	
 	public java.util.List<E> listar(String where){		
