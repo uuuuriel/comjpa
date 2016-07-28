@@ -7,40 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E, ID>{
-//
-//
-//	@SuppressWarnings("unchecked")
-//	public String getEntityName(){
-//			Class<? extends JPAAbstract> realClass = getClass();
-//			ParameterizedType superclass = (ParameterizedType)realClass.getGenericSuperclass();
-//			Class<E> classe = (Class<E>)superclass.getActualTypeArguments()[0];
-//			String nomePadrao = classe.getSimpleName();
-//			Entity annotation = classe.getAnnotation(Entity.class);
-//			if ( annotation != null && !annotation.name().isEmpty() ) {
-//				return annotation.name();
-//			}
-//			return nomePadrao;
-//	};
-//
-//	protected void incluir(Object o){
-//		EntityManager em = getEntityManager();
-//		em.getTransaction().begin();
-//		em.persist(o);
-//		em.getTransaction().commit();
-//		em.close();
-//	}
-//
-//	protected E buscarPorId(int id){
-//		String jpql = " select c from "+getEntityName()+" c where id "+ id;
-//		Query query = (Query) super.getQuery(jpql);
-//		java.util.List list = ((javax.persistence.Query) query).getResultList();
-//		for(Object object : list){
-//			return ((E) object);
-//		}
-//	
-//		return null;
-//	}
-	
+
 	private Class<E> entidade;
 	
 	@SuppressWarnings("unchecked")
@@ -80,7 +47,6 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 		em.getTransaction().begin();		
 		em.merge(e);		
 		em.getTransaction().commit();
-		
 		em.close();
 	}
 

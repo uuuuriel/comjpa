@@ -16,18 +16,19 @@ public class RunnerJPA {
 		Cidade joi = new Cidade();
 
 		joi.setEstado(sc);
-		joi.setNome("ae");
+		joi.setNome("aeffff");
 		
 		Cliente eu = new Cliente();
 
 		eu.setCidade(joi);
-		eu.setNome("ae");
+		eu.setNome("faeaeaeaefffff");
+		eu.setId(7);
 	
-		JPAAbstract<Cliente, Integer> jpa = new JPAConnection();
+		JPAAbstract<Cliente, Integer> jpa = new JPAAbstract<Cliente, Integer>(){};
 		//jpa.cadastrar(eu);
-		jpa.remover(2);
+		//jpa.remover(2);
 		//List<Cliente> ae = jpa.listar();
-		//jpa.editar(eu);
+		jpa.editar(eu);
 		//System.out.println(ae);
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}
