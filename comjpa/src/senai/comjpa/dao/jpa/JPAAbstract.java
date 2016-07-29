@@ -1,7 +1,6 @@
 package senai.comjpa.dao.jpa;
 
 import java.lang.reflect.ParameterizedType;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;

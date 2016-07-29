@@ -18,7 +18,8 @@ public class JPAConnection{
 		}
 		
 		conexao = Persistence.createEntityManagerFactory("SENAI");
-		EntityManager em = conexao.createEntityManager();
+		//EntityManager em = 
+		conexao.createEntityManager();
 		return conexao;
 	}
 	

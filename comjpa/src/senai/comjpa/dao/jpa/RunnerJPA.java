@@ -1,14 +1,11 @@
 package senai.comjpa.dao.jpa;
 
-import java.util.List;
-
 import senai.comjpa.pojo.Cidade;
 import senai.comjpa.pojo.Cliente;
 import senai.comjpa.pojo.Estado;
 
 public class RunnerJPA {
 	
-	@SuppressWarnings("unused")
 	public static void main(String[] args){
 		Estado sc = new Estado();
 		sc.setNome("Santa ae");
@@ -25,7 +22,7 @@ public class RunnerJPA {
 		//java.util.List<Cliente> ae = null;
 		System.out.println(jpa.listar());
 		//jpa.editar(eu);
-		//System.out.println(ae);
+
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
 	}
 
