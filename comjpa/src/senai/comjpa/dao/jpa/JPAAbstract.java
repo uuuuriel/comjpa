@@ -12,21 +12,19 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 	
 	@SuppressWarnings("unchecked")
 	public JPAAbstract(){
-		@SuppressWarnings("rawtypes")
-		Class<? extends JPAAbstract> realClass = getClass();
-		ParameterizedType superclass = (ParameterizedType) realClass.getGenericSuperclass();
+		ParameterizedType superclass = (ParameterizedType) getClass().getGenericSuperclass();
 		this.entidade = (Class<E>) superclass.getActualTypeArguments()[0];
 	}
 	
 	
-	private String getEntityName(){		
-		String nomePadrao = this.entidade.getSimpleName();		
-		Entity annotation = this.entidade.getAnnotation(Entity.class);		
-		if ( annotation != null && !annotation.name().isEmpty() ) {
-			return annotation.name();
-		}		
-		return nomePadrao;
-	}
+//	private String getEntityName(){		
+//		String nomePadrao = this.entidade.getSimpleName();		
+//		Entity annotation = this.entidade.getAnnotation(Entity.class);		
+//		if ( annotation != null && !annotation.name().isEmpty() ) {
+//			return annotation.name();
+//		}		
+//		return nomePadrao;
+//	}
 	
 	public E getObjeto(ID id){	
 		EntityManager em = getEntityManager();
@@ -65,7 +63,7 @@ public abstract class JPAAbstract<E, ID> extends JPAConnection implements Crud<E
 	}
 	
 	public java.util.List<E> listar(String where){		
-		String jpql = "SELECT E FROM "+ this.getEntityName() +" E";		
+		String jpql = "SELECT E FROM "+ this.entidade.getSimpleName() +" E";		
 		if(where != null && !where.isEmpty()){
 			jpql += " WHERE "+ where;
 		}

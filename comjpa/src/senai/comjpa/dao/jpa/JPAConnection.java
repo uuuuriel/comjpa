@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 public class JPAConnection{
-	private EntityManagerFactory conexao;
+	private static EntityManagerFactory conexao;
 	
 	private EntityManagerFactory conectar(){
 		try{

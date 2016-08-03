@@ -1,5 +1,6 @@
 package senai.comjpa.dao.jpa;
 
+import senai.comjpa.daoe.ClienteDAO;
 import senai.comjpa.pojo.Cidade;
 import senai.comjpa.pojo.Cliente;
 import senai.comjpa.pojo.Estado;
@@ -16,11 +17,11 @@ public class RunnerJPA {
 		Cliente eu = new Cliente();
 		eu.setCidade(joi);
 		eu.setNome("faeaeaeaefffff");
-		JPAAbstract<Cliente, Integer> jpa = new JPAAbstract<Cliente, Integer>(){};
-		//jpa.cadastrar(eu);
+		ClienteDAO jpa = new ClienteJPADAO();
+		jpa.cadastrar(eu);
 		//jpa.remover(2);
 		//java.util.List<Cliente> ae = null;
-		System.out.println(jpa.listar());
+		//System.out.println(jpa.listar());
 		//jpa.editar(eu);
 
 		System.out.println("Estado inserido com o id "+sc.getId()+ "  -  "+eu.getNome());
